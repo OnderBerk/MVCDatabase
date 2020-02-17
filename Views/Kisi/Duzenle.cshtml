@@ -1,0 +1,49 @@
+﻿@model mvcdatabase.Models.Kisiler
+@{
+    ViewBag.Title = "Düzenle";
+}
+
+<h2>Kullanıcıyı Düzenle</h2>
+<hr />
+@using (Html.BeginForm())
+{
+    <div class="input-group">
+
+        <span class="input-group-addon" id="txtad">Ad: </span>
+        @Html.TextBoxFor(x => x.Ad, new { @class = "form - control", placeholder = "Username", aria_describedby = "txtad" })
+
+    </div>
+    <br />
+
+    <div class="input-group">
+
+        <span class="input-group-addon" id="txtsoyad">Soyad: </span>
+        @Html.TextBoxFor(x => x.Soyad, new { @class = "form - control", placeholder = "Surname", aria_describedby = "txtsoyad" })
+
+    </div>
+    <br />
+    <div class="input-group">
+
+        <span class="input-group-addon" id="txtyas">Yaş: </span>
+        @Html.TextBoxFor(x => x.Yas, new { @class = "form - control", placeholder = "Age", aria_describedby = "txtyas" })
+
+    </div>
+    <br />
+
+    <div class="input-group">
+        <input type="submit" value="Kaydet" class="btn btn-success" />
+    </div>
+    <br />
+    <div class="input-group">
+        @if (ViewBag.Result != null)
+        {
+            <div class="alert alert-@ViewBag.Status" role="alert">
+                @ViewBag.Result
+            </div>
+        }
+    </div>
+}
+
+
+
+
